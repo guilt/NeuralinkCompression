@@ -1,0 +1,14 @@
+# Archive Files
+*.zip
+*.7z
+*.rar
+*.zstd
+*.xz
+*.gz
+*.bz2
+
+# Raw Signals
+*.wav
+
+# Other Things
+*.pyc
