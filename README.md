@@ -53,6 +53,20 @@ $ python --version
 Python 3.12.3
 ```
 
+SciPy/NumPy:
+
+```shell
+$ pip install -U scipy
+Requirement already satisfied: scipy in python312\lib\site-packages (1.13.1)
+Requirement already satisfied: numpy<2.3,>=1.22.4 in python312\lib\site-packages (from scipy) (1.26.4)
+```
+
+GoldWave:
+
+```shell
+v6.80
+```
+
 ## Basic Data Analysis
 
 An analysis of the file in `data.zip` reveals a ton of `.wav` files. First, we want
