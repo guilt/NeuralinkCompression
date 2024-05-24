@@ -4,6 +4,55 @@
 
 See [Problem](https://content.neuralink.com/compression-challenge/README.html).
 
+## Software Used
+
+7Zip:
+
+```shell
+$ 7z
+
+7-Zip 24.05 (x64) : Copyright (c) 1999-2024 Igor Pavlov : 2024-05-14
+```
+
+FFMpeg:
+
+```shell
+$ ffmpeg
+ffmpeg version 6.0-full_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 12.2.0 (Rev10, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-shared --disable-w32threads --disable-autodetect
+                 --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp
+                 --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt
+                 --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-sdl2
+                 --enable-libaribb24 --enable-libdav1d --enable-libdavs2 --enable-libuavs3d --enable-libzvbi 
+                 --enable-librav1e --enable-libsvtav1 --enable-libwebp --enable-libx264 --enable-libx265
+                 --enable-libxavs2 --enable-libxvid --enable-libaom --enable-libjxl --enable-libopenjpeg
+                 --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype
+                 --enable-libfribidi --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg
+                 --enable-amf --enable-cuda-llvm --enable-cuvid --enable-ffnvcodec --enable-nvdec --enable-nvenc
+                 --enable-d3d11va --enable-dxva2 --enable-libvpl --enable-libshaderc --enable-vulkan --enable-libplacebo
+                 --enable-opencl --enable-libcdio --enable-libgme --enable-libmodplug --enable-libopenmpt
+                 --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame
+                 --enable-libvo-amrwbenc --enable-libilbc --enable-libgsm --enable-libopencore-amrnb --enable-libopus
+                 --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa
+                 --enable-librubberband --enable-libsoxr --enable-chromaprint
+  libavutil      58.  2.100 / 58.  2.100
+  libavcodec     60.  3.100 / 60.  3.100
+  libavformat    60.  3.100 / 60.  3.100
+  libavdevice    60.  1.100 / 60.  1.100
+  libavfilter     9.  3.100 /  9.  3.100
+  libswscale      7.  1.100 /  7.  1.100
+  libswresample   4. 10.100 /  4. 10.100
+  libpostproc    57.  1.100 / 57.  1.100
+```
+
+Python:
+
+```shell
+$ python --version
+Python 3.12.3
+```
+
 ## Basic Data Analysis
 
 An analysis of the file in `data.zip` reveals a ton of `.wav` files. First, we want
