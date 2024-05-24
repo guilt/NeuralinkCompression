@@ -15,5 +15,8 @@
 *.flac
 *.aac
 
+# Side Cars
+*.txt
+
 # Other Things
 *.pyc

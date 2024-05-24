@@ -61,18 +61,26 @@ and encoded much better.
 ```shell
 $ python Scripts/ConcatenateWav.py
 $ 7z a -tzip -mx9 Output.zip Output.wav
+$ 7z a -tzip -mx9 OutputSide.zip Output.txt
 
 $ du -hs Output.zip
 57M     Output.zip
+
+$ du -hs OutputSide.zip
+20K     Output.zip
 ```
 
 We just saved 6MB excluding the list of files and all the extraneous metadata alone. What about `7z`?
 
 ```shell
 $ 7z a -t7z -mx9 Output.7z Output.wav
+$ 7z a -tzip -mx9 OutputSide.7z Output.txt
 
 $ du -hs Output.7z
 50M     Output.7z
+
+$ du -hs OutputSide.7z
+16K     OutputSide.7z
 ```
 
 We already improved the baseline by 12MB, a 20% saving. With extremely time-taking compression,
