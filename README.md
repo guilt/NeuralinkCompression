@@ -133,11 +133,17 @@ $ du -hs OutputSide.zip
 20K     Output.zip
 ```
 
-We just saved 6MB excluding the list of files and all the extraneous metadata alone. What about `7z`?
+We just saved 6MB excluding the list of files and all the extraneous metadata alone.
+
+The SideCar data is only a mere 20KB. If we only emitted the frames information and the filename
+had no relevance (seems to be a random UUID), the whole thing is **1374 bytes only** even
+when compressed as text.
+
+What about `7z`?
 
 ```shell
 $ 7z a -t7z -mx9 Output.7z Output.wav
-$ 7z a -tzip -mx9 OutputSide.7z Output.txt
+$ 7z a -t7z -mx9 OutputSide.7z Output.txt
 
 $ du -hs Output.7z
 50M     Output.7z
@@ -147,7 +153,7 @@ $ du -hs OutputSide.7z
 ```
 
 We already improved the baseline by 12MB, a 20% saving. With extremely time-taking compression,
-but it gets us very close to the entropy of this file.
+but it gets us very close to the entropy of this file. Sidecar sizes are similar.
 
 This isn't great but it already confirms my suspicions about the file.
 
@@ -237,14 +243,18 @@ begin with.
 If Neuralink Scientists are interested, they should
 give this a try and see how it fares in lab tests.
 
+## Conclusion
 
-## Feedback
+People should check out all the Hutter Prize algorithms to compress this data losslessly,
+but in all likelyhood their current chips can't compress as fast to meet the latency challenges.
+Not at 10mW with a latency of <1ms at 200x ratios, with humanly available technology in 2024.
 
-I did this exercise for fun. People should check out all the Hutter Prize algorithms
-to compress this wall of lossless signals, but in all likelyhood their current chips can't compress
-as fast to meet the latency challenges.
+If there is amazing alien level technology available today, I'd say bring it on and solve for 
+the world.
 
 I think lossy compression might have a bright future if a good SNR value can be determined.
+
+## Feedback
 
 All feedback welcome!
 

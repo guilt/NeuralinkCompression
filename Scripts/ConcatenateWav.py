@@ -16,7 +16,7 @@ def main():
         for wavFile in wavFiles:
             inputWav = wave.open(wavFile, 'rb')
             wavData.append( [inputWav.getparams(), inputWav.readframes(inputWav.getnframes())] )
-            outputSideCar.write(f"{wavFile}, {inputWav.getnframes()}\n")
+            outputSideCar.write(f"{inputWav.getnframes()}\n")
             inputWav.close()
 
     outputWav = wave.open(outputWavFile, 'wb')
