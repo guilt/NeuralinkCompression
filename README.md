@@ -245,14 +245,52 @@ give this a try and see how it fares in lab tests.
 
 ## Conclusion
 
-People should check out all the Hutter Prize algorithms to compress this data losslessly,
-but in all likelyhood their current chips can't compress as fast to meet the latency challenges.
-Not at 10mW with a latency of <1ms at 200x ratios, with humanly available technology in 2024.
+I first looked at the data, tried to separate the signal data and the metadata. That
+gave us a good way to get rid of extraneous attributes quickly.
 
-If there is amazing alien level technology available today, I'd say bring it on and solve for 
-the world.
+Some basic findings there:
 
-I think lossy compression might have a bright future if a good SNR value can be determined.
+- Individual signal data entropy is not same as Individual file entropy.
+- Combined file entropy is not the same as packing individual data together in a Zip file.
+- Use the Wave Combiner then run compression on the Output.wav. Compress the Sidecar separately.
+- Their per file compression has a lower ratio than combined.
+- If Neuralink had shipped a zip file for each wav it would be much larger.
+- If Neuralink need all these files separately and yet they wish to compress better,
+   they need a side car to store segment information efficiently.
+- Individual file entropy is meaningless if a collection of wav files together
+  plus their sidecar has lower entropy.
+
+Next, I checked out the feasibility of the lossless audio algorithms available today. They
+did not perform better than the textual algorithms.
+
+There are a lot of Hutter Prize algorithms to compress this data losslessly at high ratios, they
+do not work well today to meet the latency nor compression ratio constraints. Even the best ones.
+Assuming you wanted to develop a low cost low power chip to do that algorithm, there isn't one to
+compress as fast today to meet the latency challenges. Not at 10mW with a latency of <1ms at 200x
+ ratios, with humanly available technology in 2024. If there is amazing alien level technology
+available today in a secret government lab, I'd say bring it on and solve for the world.
+
+If there is a good signal generator (or an encoder) available already which can mimic the behavior
+of the real world, that would indeed be the ideal scenario, then all you need to do is send the
+command stream across and play it on the other side. Then you don't start with generic audio
+files like this, you just go digital already!
+
+Another thing is how important each electrode's data is. This can only come from empirical
+experimentation, and since I am not a Neuroscientist *yet* I cannot tell how to get rid of extraneous
+signal entropy any more. I am also assuming this signal data will be noisy, the real world
+needs to tell me if this assumption is correct or not.
+
+Next, I actually analyzed the signal data for what we can do with it today. What I found was that
+lossy compression is actually reasonably better than LZ based file compression. We can get roughly
+15MB of audio data for an hour tops and has excellent SNR ratios similar to the original. If we 
+do not need higher fidelity, we do not need to overengineer for it. Adequate is what I am aiming
+for.
+
+I think lossy compression might have a bright future if a good SNR value can be determined. In
+all seriousness, Engineering is about making things happen today with what's available today
+to shape a better tomorrow. Innovation is great yet there needs to be more talk about what is
+good enough for a variety of usecases, so that it helps us embrace and design for real-world
+constraints.
 
 ## Feedback
 
