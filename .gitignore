@@ -7,8 +7,13 @@
 *.gz
 *.bz2
 
-# Raw Signals
+# Raw Signals as Audio
 *.wav
+*.m4a
+*.opus
+*.ogg
+*.flac
+*.aac
 
 # Other Things
 *.pyc
