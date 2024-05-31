@@ -4,7 +4,7 @@ import wave
 import glob
 
 def main():
-    wavFiles = glob.glob('Data/*.wav')
+    wavFiles = sorted(glob.glob('Data/*.wav'))
     outputWavFile = "Output.wav"
     outputSideCarFile = "Output.txt"
 
@@ -16,7 +16,7 @@ def main():
         for wavFile in wavFiles:
             inputWav = wave.open(wavFile, 'rb')
             wavData.append( [inputWav.getparams(), inputWav.readframes(inputWav.getnframes())] )
-            outputSideCar.write(f"{inputWav.getnframes()}\n")
+            outputSideCar.write(f"{wavFile} {inputWav.getnframes()}\n")
             inputWav.close()
 
     outputWav = wave.open(outputWavFile, 'wb')
